@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.querySelector(".get_gold").addEventListener("click", ()=>{
-    gold = 10000000000000;
+    gold = 0;
     updateGold();
   })
   document.querySelector(".remove_gold").addEventListener("click", ()=>{
@@ -458,6 +458,7 @@ document.addEventListener('DOMContentLoaded', () => {
   customElements.define("click-box", ClickBox);
   
 });
+
 
 
 

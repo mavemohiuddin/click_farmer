@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clicker Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="gold">Gold: 0</div>
+
+  <div class="main">
+    <!-- Left panel for Buffs -->
+    <div class="sidebar left-panel">
+      <tab-view>
+        <div class="tabs">
+          <button class="tab-button active" data-tab="buffs">Buffs</button>
+          <button class="tab-button" data-tab="stats">Stats</button>
+        </div>
+    
+        <div id="buffs" class="tab-content">
+          <h3 class="tab_label">Active Buffs</h3>
+          <div id="buff-list"></div>
+        </div>
+    
+        <div id="stats" class="tab-content hidden">
+          <h3 class="tab_label">Stats</h3>
+          <ul class="stats-list">
+          </ul>
+        </div>
+      </tab-view>
+      <div class="debug_container">
+        <button class="get_gold bulk-btn active">Get Gold</button>
+        <button class="remove_gold bulk-btn active">Remove Gold</button>
+      </div>
+    </div>
+
+    <!-- Center panel -->
+    <div class="center-panel">
+      <div class="aucto_clicker_container">
+        <auto-clicker></auto-clicker>
+      </div>
+      <div class="clickity_container">
+        <click-box class="click-box">Click Me</click-box>
+      </div>
+    </div>
+
+    <!-- Right panel for Upgrades -->
+    <div class="sidebar right-panel">
+      
+      <tab-view>
+        <div class="tabs">
+          <button class="tab-button active" data-tab="active">
+            Active
+          </button>
+          <button class="tab-button" data-tab="passive">
+            Passive
+          </button>
+          <button class="tab-button" data-tab="random">
+            Random
+          </button>
+        </div>
+
+        <toggle-element data-controls="bulkAmount" class="bulk-controls">
+          <button class="bulk-btn" data-amount="1">+1</button>
+          <button class="bulk-btn" data-amount="5">+5</button>
+          <button class="bulk-btn" data-amount="9999">Max</button>
+        </toggle-element>
+
+        <!-- Active Upgrades -->
+        <div id="active" class="tab-content">
+          <h3 class="tab_label">Active Upgrades</h3>
+
+          <!-- Click Power -->
+          <upgrade-button data-name="clickPower">
+            <title>Click Power</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Click Multiplier -->
+          <upgrade-button data-name="clickMultiplier">
+            <title>Power Multiplier</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Click Count -->
+          <upgrade-button data-name="clickCount">
+            <title>Click Count</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+        </div>
+
+        <!-- Passive Upgrades -->
+        <div id="passive" class="tab-content hidden">
+          <h3 class="tab_label">Passive Upgrades</h3>
+
+          <!-- Passive Level -->
+          <upgrade-button data-name="autoClickerPower">
+            <title>Auto Clicker level</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Passive Interval -->
+          <upgrade-button data-name="autoClickerInterval">
+            <title>Clicker Interval</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Passive Multiplier -->
+          <upgrade-button data-name="autoClickerMultiplier">
+            <title>Clicker Multiplier</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Passive Click Count -->
+          <upgrade-button data-name="autoClickerCount">
+            <title>Clicker Count</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Passive use buffs -->
+          <upgrade-button data-name="autoClickerBuff">
+            <title>Use Buffs</title>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+           
+        </div>
+
+        <!-- Random Upgrades -->
+        <div id="random" class="tab-content hidden">
+          <h3 class="tab_label">Random Upgrades</h3>
+
+          <!-- Buff Level -->
+          <upgrade-button data-name="buffChance">
+            <title>Buff Level</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Buff Power -->
+          <upgrade-button data-name="buffPower">
+            <title>Power Buff</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+
+          <!-- Buff Power -->
+          <upgrade-button data-name="buffMultiplier">
+            <title>Multiplier Buff</title>
+            <level>Level: <span>0</span></level>
+            <button>
+              Upgrade (<span>?</span> gold)
+            </button>
+          </upgrade-button>
+        
+        </div>
+      </tab-view>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
